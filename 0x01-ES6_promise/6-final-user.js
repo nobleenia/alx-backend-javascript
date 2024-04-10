@@ -6,7 +6,7 @@ export default async function handleProfileSignup(firstName, lastName, fileName)
     sataus: 'fulilled',
     value,
   }));
-  const photo = await uploadPhoto(filename).catch((error) => ({
+  const photo = await uploadPhoto(fileName).catch((error) => ({
     status: 'rejected',
     value: `${error.name}: ${error.message}`,
   }));
