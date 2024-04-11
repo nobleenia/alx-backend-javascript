@@ -11,7 +11,7 @@ export default class HolbertonCourse {
     }
     students.forEach((student) => {
       if (typeof student !== 'string') {
-	throw TypeError('Student must be a string');
+        throw TypeError('Student must be a string');
       }
     });
 
@@ -52,7 +52,7 @@ export default class HolbertonCourse {
     }
     newStudents.forEach((student) => {
       if (typeof student !== 'string') {
-	throw TypeError('Student must be a string');
+        throw TypeError('Student must be a string');
       }
     });
     this._students = newStudents;	
