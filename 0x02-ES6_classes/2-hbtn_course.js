@@ -14,6 +14,7 @@ export default class HolbertonCourse {
 	throw TypeError('Student must be a string');
       }
     });
+
     this._name = name;
     this._length = length;
     this._students = students;
@@ -40,7 +41,7 @@ export default class HolbertonCourse {
 
   set length(newLength) {
     if (typeof newLength !== 'number') {
-      throw TypeError('Length must be a string');
+      throw TypeError('Length must be a number');
     }
     this._length = newLength;
   }
@@ -50,8 +51,8 @@ export default class HolbertonCourse {
       throw TypeError('Students must be an Array');
     }
     newStudents.forEach((student) => {
-      if (typeof student !== 'number') {
-	throw TypeError('Student must be a number');
+      if (typeof student !== 'string') {
+	throw TypeError('Student must be a string');
       }
     });
     this._students = newStudents;	
