@@ -55,6 +55,6 @@ export default class HolbertonCourse {
         throw TypeError('Student must be a string');
       }
     });
-    this._students = newStudents;	
+    this._students = newStudents;
   }
 }
