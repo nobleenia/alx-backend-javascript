@@ -6,13 +6,13 @@ async function countStudents(path) {
     const lines = data.trim().split('\n');
 
     // Ignore the header line and any empty lines
-    const students = lines.slice(1).filter(line => line.trim() !== '');
+    const students = lines.slice(1).filter((line) => line.trim() !== '');
 
     let output = `Number of students: ${students.length}\n`;
 
     const fields = {};
-    students.forEach(student => {
-      const [firstname, lastname, age, field] = student.split(',');
+    students.forEach((student) => {
+      const [firstname, , , field] = student.split(',');
 
       if (!fields[field]) {
         fields[field] = [];
