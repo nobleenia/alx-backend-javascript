@@ -1,12 +1,12 @@
-// Display the welcome message
-process.stdout.write('Welcome to Holberton School, what is your name?\n');
+console.log('Welcome to Holberton School, what is your name?');
 
-// Set up an event listener for when the user inputs their name
-process.stdin.on('data', (data) => {
-  const name = data.toString().trim();
-  console.log(`Your name is: ${name}`);
-  
-  // Display the closing message and end the process
+process.stdin.on('readable', () => {
+  const chunk = process.stdin.read();
+  if (chunk !== null) {
+    process.stdout.write(`Your name is: ${chunk}`);
+  }
+});
+
+process.stdin.on('end', () => {
   console.log('This important software is now closing');
-  process.exit();
 });
